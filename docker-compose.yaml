@@ -1,0 +1,15 @@
+services:
+
+  dockpeek:
+    image: ghcr.io/dockpeek/dockpeek:latest
+    container_name: dockpeek
+    environment:
+      - SECRET_KEY=tu_llave_secreta_segura  #cambia esto
+      - USERNAME=admin        #puedes cambiar esto
+      - PASSWORD=p4ssw0rd     #puedes cambiar esto
+    ports:
+      - "3420:8000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    
